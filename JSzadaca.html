@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        html,body {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .flexBox {
+                height: 100%;
+                width: 100%;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .divs{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flexBox">
+            <div>
+                <input id="zadatak1" type="text" value="">
+                <button type="button" onclick="zadatak1()">Confirm</button>
+            </div>
+            <div>
+                <input id="zadatak2" type="text" value="">
+                <button type="button" onclick="zadatak2()">Confirm</button>
+            </div>
+            <div class="divs">
+                <div>Highest value</div>
+                <button type="button" onclick="zadatak3(4,8,1,22)">Confirm</button>
+            </div>
+            <div class="divs">
+                <div>Sort min to max value</div>
+                <button type="button" onclick="zadatak4(4,8,1,22)">Confirm</button>
+            </div>
+            <div class="divs">
+                <div>JSON string</div>
+                <button type="button" onclick="zadatak5()">Confirm</button>
+            </div>
+            <script type="text/javascript" src="JSzadaca.js" ></script>
+        </div>
+    </body>
+</html>
