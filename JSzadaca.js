@@ -1,9 +1,11 @@
+'use strict';
+
 function zadatak1(val) {
     val = document.getElementById("zadatak1").value
         .replace(/\s+/g, " ")
         .trim()
         .split(" ")
-        .filter((word) => word !== " ").length;
+        .filter((word) => word !== "").length;
     
     alert(val)
     document.getElementById("zadatak1").value = ""
@@ -15,11 +17,26 @@ function zadatak2(val) {
         .trim()
         .split(" ")
         .filter((word) => word !== " ");
-    
-    
-    for (let [idx, letter] of val.entries()) {
-        alert(`${idx + 1}. riječ: ${letter.length}`)
+
+    let input = "";
+    let result = "";
+    let idx = 1;
+
+    for (let i of val) {
+        for (let j = 0; j <= i.length; j++) {
+          if (j === i.length - 1) {
+            j++;
+            input += j;
+          }
+        }
     }
+    
+    for (let letter of input) {
+        result += `${idx++}. riječ: ${letter} \n`;
+    }
+
+    alert(result);
+    
 
     document.getElementById("zadatak2").value = ""
 }
