@@ -130,17 +130,32 @@ function lastPerson() {
     alert(JSON.stringify(generatedPersons.slice(-1)))
 }
 
-function highestPerson() {
-    let input = "";
-    for (let i of generatedPersons) {
-        input = i;
-        console.log(input.height);
-    }
-    
-    console.log(input.height);
+// var arr = []
+var maxNum = []
 
+function highestPerson() {
+  for (let i of generatedPersons) {
+    console.log(i.height);
+    // arr.push(i);
+    maxNum.push(i.height); 
+    //   if (Math.max(i.height) === Math.max(...maxNum)) {
+    //    console.log(i);
+    //   }
+    }
+
+    for (let i of generatedPersons) {
+        if (i.height === Math.max(...maxNum)) {
+            console.log(i);
+            alert(JSON.stringify(i));
+        }
+    }
+  // const maxVal = Math.max(...arr);
+  //     if (i.height === maxVal) {
+  // }
+//   console.log(arr);
 }
 
+
 function allPersons() {
-    console.log(JSON.stringify(generatedPersons));
+    alert(JSON.stringify(generatedPersons));
 }
