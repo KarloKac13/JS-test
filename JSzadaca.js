@@ -5,9 +5,9 @@ function zadatak1(val) {
         .replace(/\s+/g, " ")
         .trim()
         .split(" ")
-        .filter((word) => word !== "").length;
+        .filter((word) => word !== "");
     
-    alert(val)
+    alert(val.length);
     document.getElementById("zadatak1").value = ""
 }
 
@@ -65,4 +65,82 @@ function zadatak5() {
     
     const json = JSON.stringify(person)
     alert(json)
+}
+
+var generatedPersons = [];
+
+// var persons = {};
+
+const hairColors = ["brown", "blond", "black"];
+const jobPositions = ["worker", "manager", "director"];
+const firms = ["firma1", "firma2", "firma3"];
+const addresses = [
+  "adresa 123",
+  "ulica pere perica 77",
+  "trg zrtava programiranja 2",
+];
+
+function zadatak6() {
+    const height = Math.floor(Math.random() * (200 - 150 + 1) + 150);
+    const weight = Math.floor(Math.random() * (150 - 50 + 1) + 50);
+    const hairIdx = Math.floor(Math.random() * hairColors.length);
+    const jobIdx = Math.floor(Math.random() * jobPositions.length);
+    const firmIdx = Math.floor(Math.random() * firms.length);
+    const addressIdx = Math.floor(Math.random() * addresses.length);
+
+    // person["height"] = height;
+    // person["weight"] = weight;
+    // person["hair"] = hairColors[hairIdx];
+    // person["job"] = {};
+    // person.job["position"] = jobPositions[jobIdx]
+    // person.job["firm"] = firms[firmIdx];
+    // person.job["address"] = addresses[addressIdx];
+
+    generatedPersons.push({
+      height: height,
+      weight: weight,
+      hair: hairColors[hairIdx],
+      job: {
+        position: jobPositions[jobIdx],
+        firm: firms[firmIdx],
+        address: addresses[addressIdx],
+      },
+    });
+
+    console.log(generatedPersons);
+
+    // console.log(
+    //     hairColors[hairIdx],
+    //     jobPositions[jobIdx],
+    //     firms[firmIdx],
+    //     addresses[addressIdx],
+    //     height,
+    //     weight)
+    
+    
+}
+
+function personCount() {
+    alert(
+      "Broj osoba u generatedPersons array-u je " + generatedPersons.length
+    );
+}
+
+function lastPerson() {
+    alert(JSON.stringify(generatedPersons.slice(-1)))
+}
+
+function highestPerson() {
+    let input = "";
+    for (let i of generatedPersons) {
+        input = i;
+        console.log(input.height);
+    }
+    
+    console.log(input.height);
+
+}
+
+function allPersons() {
+    console.log(JSON.stringify(generatedPersons));
 }
