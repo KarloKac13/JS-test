@@ -81,20 +81,12 @@ const addresses = [
 ];
 
 function zadatak6() {
-    const height = Math.floor(Math.random() * (200 - 150 + 1) + 150);
-    const weight = Math.floor(Math.random() * (150 - 50 + 1) + 50);
+    const height = Math.floor(Math.random() * (51) + 150);
+    const weight = Math.floor(Math.random() * (101) + 50);
     const hairIdx = Math.floor(Math.random() * hairColors.length);
     const jobIdx = Math.floor(Math.random() * jobPositions.length);
     const firmIdx = Math.floor(Math.random() * firms.length);
     const addressIdx = Math.floor(Math.random() * addresses.length);
-
-    // person["height"] = height;
-    // person["weight"] = weight;
-    // person["hair"] = hairColors[hairIdx];
-    // person["job"] = {};
-    // person.job["position"] = jobPositions[jobIdx]
-    // person.job["firm"] = firms[firmIdx];
-    // person.job["address"] = addresses[addressIdx];
 
     generatedPersons.push({
       height: height,
@@ -108,16 +100,6 @@ function zadatak6() {
     });
 
     console.log(generatedPersons);
-
-    // console.log(
-    //     hairColors[hairIdx],
-    //     jobPositions[jobIdx],
-    //     firms[firmIdx],
-    //     addresses[addressIdx],
-    //     height,
-    //     weight)
-    
-    
 }
 
 function personCount() {
@@ -130,31 +112,25 @@ function lastPerson() {
     alert(JSON.stringify(generatedPersons.slice(-1)))
 }
 
-// var arr = []
-var maxNum = []
+var tallest = null;
+var arr;
 
-function highestPerson() {
-  for (let i of generatedPersons) {
-    console.log(i.height);
-    // arr.push(i);
-    maxNum.push(i.height); 
-    //   if (Math.max(i.height) === Math.max(...maxNum)) {
-    //    console.log(i);
-    //   }
-    }
+function tallestPerson() {
 
-    for (let i of generatedPersons) {
-        if (i.height === Math.max(...maxNum)) {
-            console.log(i);
-            alert(JSON.stringify(i));
-        }
+  tallest = generatedPersons[0].height;
+
+  for (var i of generatedPersons) {
+    if (tallest <= i.height) {
+      tallest = i.height;
+      if (tallest === i.height) {
+        arr = i
+      }
+  
     }
-  // const maxVal = Math.max(...arr);
-  //     if (i.height === maxVal) {
-  // }
-//   console.log(arr);
+  }
+  
+  alert(JSON.stringify(arr));
 }
-
 
 function allPersons() {
     alert(JSON.stringify(generatedPersons));
